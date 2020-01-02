@@ -1,0 +1,45 @@
+---
+title: "Project Management Timeline for C1B Data Science Team"
+author: "Tony Cai"
+date: "1/1/2020"
+output:
+  prettydoc::html_pretty: null
+  highlight: github
+  theme: cayman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Science Team Project management Timeline
+
+Right now data science team have four ongoing projects:
+  
+* Data Governance conducted by Sri;  
+* Ace model developed by Matt and Joung;  
+* Clarity Model developed By Jose;  
+* Fraud Detection System developed by Tony;  
+  
+  
+    
+  
+
+```{r echo=FALSE,message = FALSE}
+library(vistime)
+
+C1B_DS <- data.frame(Position = c("Development","Ongoing","Ongoing","Testing","Ongoing"),
+                   Name = c("Fraud Detection", "ACE Model", "Clarity Model","Fraud Detection","Data Governance"),
+                   start = c("2019-11-01", "2019-11-01", "2019-11-01","2020-01-01","2019-10-01"),
+                   end = c("2019-12-31", "2020-01-01", "2020-01-01","2020-01-31","2020-05-30" ),
+                   color = c('#a5d6a7', '#c69c6e', '#c69c6e','#c69c6e','#c69c6e'),
+                   fontcolor = c("black", "white", "white","white","white")
+                   )
+
+# vistime(C1B_DS, events="Position", groups="Name", title="DS Project Management")
+vistime(C1B_DS, events="Position", groups="Name")
+```
+
+
+
+
